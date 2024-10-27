@@ -2,10 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: museo-sans, sans-serif;
+}
+
+body {
+    background-color: #FEFEFE;
 }
 
 :root {
-  --font-color: #026686;
+  --font-color: #026786;
 }
 
 .body {
@@ -21,12 +26,6 @@
 ul li {
   list-style-type: none;
   padding: 5px;
-}
-
-.main {
-  background-color: white;
-  border: 1px solid black;
-  padding: 20px;
 }
 
 .plans {
@@ -55,18 +54,44 @@ ul li {
 .submission-footer {
   position: fixed;
   bottom: 0;
-  display: block;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  ;
 }
 
 .button {
   padding: 5px 50px;
   color: #00a2ad;
+  border: 1px solid #00a2ad;
   background-color: #ffe582;
-  justify-content: center;
+  text-align: center;
   margin: 5px;
+  cursor: pointer;
+  margin-left: auto;
 }
 
 .button:hover {
   color: var(--font-color);
-  background-color: #f3c93d;
+  border-color: var(--font-color );
+  background-color: #FFCD05;
+}
+
+.section {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.completed {
+  color: var(--font-color);
+}
+
+.current {
+  color: #00A3AD;
+  border-left: #00A3AD 2px solid;
+}
+
+.upcoming {
+  color: #B2B2B2;
 }

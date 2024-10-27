@@ -1,40 +1,44 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLocationDot,
-  faGaugeHigh,
-  faLock,
-} from "@fortawesome/free-solid-svg-icons";
+import locationIcon from '../assets/location.svg';
+import gaugeIcon from '../assets/gauge.svg'
+import lockIcon from '../assets/lock.svg'
 
 const Card = ({ title, description, price, isSelected, onClick }) => {
   return (
     <div className={`card ${isSelected ? "selected" : ""}`} onClick={onClick}>
-      <h2>{title}</h2>
+      <h2 style={{fontWeight:'lighter', color:'#11687f'}}>{title}</h2>
       <ul>
         {description.map((item, index) => {
           let icon;
-          console.log(index);
           switch (index) {
             case 0:
-              icon = faLocationDot;
+              icon = locationIcon;
               break;
             case 1:
-              icon = faGaugeHigh;
+              icon = gaugeIcon;
               break;
             case 2:
-              icon = faLock;
+              icon = lockIcon;
               break;
             default:
               icon = null;
           }
           return (
             <li key={index}>
-              {icon && <FontAwesomeIcon icon={icon} style={{margin:3}}/>}
+              {icon && <img src={icon} style={{ width: 16, height:16, color:'#1ca6b0', margin: 3 }} />}
               <span>{item}</span>
             </li>
           );
         })}
       </ul>
-      <p>{price}</p>
+      <p style={{ color: "#11687d", fontWeight: "bolder" }}>
+        {price !== "Free" ? (
+          <>
+            {price} <span style={{ fontWeight: "normal" }}>/month</span>
+          </>
+        ) : (
+          price
+        )}
+      </p>
     </div>
   );
 }

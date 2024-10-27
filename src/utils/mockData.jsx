@@ -15,7 +15,7 @@ export const cardData = [
       "Automated mileage calculations",
       "In-person key handover to guests",
     ],
-    price: "$10/month",
+    price: "$10",
   },
   {
     title: "Best mates",
@@ -24,6 +24,6 @@ export const cardData = [
       "Automated mileage calculations",
       "Remote handover to guests",
     ],
-    price: "$30/month",
+    price: "$30",
   },
 ];

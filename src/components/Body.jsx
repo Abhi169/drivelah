@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import SubscriptionPage from "../pages/SubscriptionPage";
 import DevicePage from "../pages/DevicePage";
 import Footer from "./Footer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import checkIcon from "../assets/check.svg";
 
 const Body = () => {
   const sections = [
@@ -73,7 +72,7 @@ const Body = () => {
               {section}
               {index < currentSectionIndex && (
                 <span>
-                  <FontAwesomeIcon icon={faCircleCheck} style={{ margin: 2 }} />
+                  <img src={checkIcon} />
                 </span>
               )}
             </li>

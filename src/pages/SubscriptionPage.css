@@ -1,0 +1,137 @@
+.subscription-container {
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.styled-hr {
+  border: none;
+  height: 2px;
+  background-color: #11687f;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.note {
+  color: #B2B2B2;
+  font-size: 14px;
+}
+
+.plans {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card.selected {
+  border-color: #026786;
+  background-color: #f0f8ff;
+}
+
+.subscription-add-ons {
+  margin-top: 20px;
+}
+
+.subscription-add-ons p {
+  margin: 10px 0;
+}
+
+.subscription-add-ons input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.subscription-add-ons input[type="radio"] {
+  margin-right: 10px;
+}
+
+.last-content {
+  margin-top: 20px;
+}
+
+.last-content p {
+  margin: 10px 0;
+}
+
+.last-content span {
+  cursor: pointer;
+  color: #00A3AD;
+  text-decoration: underline;
+}
+
+.last-content span:hover {
+  color: #026786;
+}
+
+.card-container {
+    position: relative;
+    width: 50%;
+}
+
+.card-container img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card-container input {
+    width: 50%;
+    padding: 40px 10px 10px 40px;
+    border-radius: 14px;
+    font-size: 16px;   
+}
+
+.option {
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin: 10px;
+}
+
+.add-ons {
+    display: flex;
+}
+
+/* Hide the default radio button */
+input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+/* Style the custom radio button */
+.custom-radio {
+  display: inline-block;
+  width: 20px; /* Size of the custom radio button */
+  height: 20px; /* Size of the custom radio button */
+  border-radius: 50%; /* Make it circular */
+  border: 2px solid #ccc; /* Border color */
+  background-color: white; /* Background color */
+  cursor: pointer; /* Pointer on hover */
+  margin-right: 8px; /* Space between the button and label text */
+}
+
+/* Change background color when radio is checked */
+input[type="radio"]:checked + .custom-radio {
+  background-color: #4CAF50; /* Color when checked */
+  border-color: #4CAF50; /* Change border color if needed */
+}
