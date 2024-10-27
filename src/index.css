@@ -3,3 +3,70 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+  --font-color: #026686;
+}
+
+.body {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container ul>li {
+  padding: 10px;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.main {
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.plans {
+  display: flex;
+}
+
+.card {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid transparent;
+  border-radius: 4%;
+  cursor: pointer;
+  background-color: rgb(252, 252, 252);
+  transition: background-color 0.3s;
+}
+
+.card.selected {
+  background-color: rgb(242, 250, 252);
+  border: 1px solid rgb(139, 211, 230);
+}
+
+.footer {
+  width: 100%;
+}
+
+.submission-footer {
+  position: fixed;
+  bottom: 0;
+  display: block;
+}
+
+.button {
+  padding: 5px 50px;
+  color: #00a2ad;
+  background-color: #ffe582;
+  justify-content: center;
+  margin: 5px;
+}
+
+.button:hover {
+  color: var(--font-color);
+  background-color: #f3c93d;
+}
