@@ -24,12 +24,13 @@ const SubscriptionPage = () => {
         return (
           <div className="subscription-add-ons">
             <hr className="styled-hr" />
-            <p>Select add-ons for your subscription</p>
+            <p className="subscription-p">Select add-ons for your subscription</p>
             <div className="add-ons">
               <div className="option">
                 <label>
                   BYO secondary GPS - $5/month
                   <input type="radio" name="addon" value="BYO secondary GPS" />
+                  <span className="custom-radio"></span>
                 </label>
               </div>
             </div>
@@ -57,7 +58,9 @@ const SubscriptionPage = () => {
         return (
           <div className="subscription-add-ons">
             <hr className="styled-hr" />
-            <p>Select add-ons for your subscription</p>
+            <p className="subscription-p">
+              Select add-ons for your subscription
+            </p>
             <div className="add-ons">
               <div className="option">
                 <label>
@@ -99,23 +102,28 @@ const SubscriptionPage = () => {
         return (
           <div className="subscription-add-ons">
             <hr className="styled-hr" />
-            <p>Select add-ons for your subscription</p>
+            <p className="subscription-p">
+              Select add-ons for your subscription
+            </p>
 
             <div className="add-ons">
               <div className="option">
                 <label>
                   BYO secondary GPS - $5/month
                   <input type="radio" name="addon" value="BYO secondary GPS" />
+                  <span className="custom-radio"></span>
                 </label>
               </div>
               <div className="option">
+                <p>coming soon</p>
                 <label>
-                  Between trip insurance (coming soon)
+                  Between trip insurance
                   <input
                     type="radio"
                     name="addon"
                     value="Between trip insurance"
                   />
+                  <span className="custom-radio"></span>
                 </label>
               </div>
             </div>
@@ -130,7 +138,7 @@ const SubscriptionPage = () => {
                 name="card"
                 value={cardDetails}
                 onChange={handleCardDetailsChange}
-                placeholder="1234 5678 1234 5678 MM/YY CVC"
+                placeholder="1234 5678 1234 5678&nbsp;&nbsp;&nbsp;&nbsp;MM/YY&nbsp;&nbsp;&nbsp;&nbsp;CVC"
               />
             </div>
             <p className="note">
@@ -148,11 +156,11 @@ const SubscriptionPage = () => {
   return (
     <div className="subscription-container">
       <div className="main">
-        <h1 style={{ color: "#026786" }}>Subscription plan</h1>
-        <p>Select the ideal subscription plan for your listing.</p>
+        <h1 className="subscription-title">Subscription plan</h1>
+        <p className="subscription-description">Select the ideal subscription plan for your listing.</p>
         <hr className="styled-hr" />
         <div>
-          <p>Select your plan</p>
+          <p className="subscription-p">Select your plan</p>
           <div className="plans">
             {cardData.map((card, index) => (
               <Card
@@ -173,7 +181,7 @@ const SubscriptionPage = () => {
         <hr className="styled-hr" />
         <div className="last-content">
           <p>
-            Learn more about the plans here -{" "}
+            Learn more about the plans here - &nbsp; 
             <span>What is the right plan for me?</span>
           </p>
           <p>

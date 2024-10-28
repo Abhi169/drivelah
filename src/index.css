@@ -7,6 +7,8 @@
 
 body {
     background-color: #FEFEFE;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -20,7 +22,12 @@ body {
 }
 
 .container ul>li {
-  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-index {
+  font: 700 22px museo-sans, sans-serif;
 }
 
 ul li {
@@ -40,6 +47,7 @@ ul li {
   cursor: pointer;
   background-color: rgb(252, 252, 252);
   transition: background-color 0.3s;
+  max-width: 240px;
 }
 
 .card.selected {
@@ -58,13 +66,13 @@ ul li {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  ;
 }
 
 .button {
-  padding: 5px 50px;
+  padding: 10px 70px;
   color: #00a2ad;
   border: 1px solid #00a2ad;
+  border-radius: 4px;
   background-color: #ffe582;
   text-align: center;
   margin: 5px;
@@ -85,13 +93,81 @@ ul li {
 
 .completed {
   color: var(--font-color);
+  font: 700 22px/24px "Museo Sans Rounded", sans-serif;
 }
 
 .current {
   color: #00A3AD;
   border-left: #00A3AD 2px solid;
+  font: 900 22px "Museo Sans Rounded", sans-serif;
 }
 
 .upcoming {
   color: #B2B2B2;
+  font: 500 22px/24px "Museo Sans Rounded", sans-serif;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .body {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .container {
+    width: 83%; /* Full width for the container */
+    padding: 10px; /* Add some padding */
+  }
+
+  .container ul {
+    width: 100%; /* Full width for the list */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+
+  .container ul > li {
+    display: flex; /* Ensure the list items are displayed as flex items */
+    justify-content: space-between; /* Space out elements in the list item */
+    align-items: center; /* Center align items */
+    width: 100%; /* Full width for list items */
+    border: 1px solid #ccc; /* Add border to each list item */
+    border-radius: 5px;
+    padding: 10px; /* Add padding inside list items */
+    margin-bottom: 5px; /* Space between list items */
+    color: #000;
+  }
+
+  .container-index {
+    font-size: 18px; /* Adjust font size for mobile */
+  }
+
+  /* Remove tick marks (if using checkIcon or similar) */
+  .container ul > li img {
+    display: none; /* Hide the tick marks */
+  }
+
+
+  .plans {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards */
+    width: 100%; /* Full width */
+  }
+
+  .card {
+    max-width: 90%; /* Card takes up most of the screen width */
+    margin: 10px auto; /* Center cards with auto margins */
+  }
+
+  .footer {
+    position: relative; /* Change from fixed to relative for mobile */
+    padding: 10px; /* Add padding for footer */
+  }
+
+  .button {
+    width: 80%; /* Make the button width responsive */
+    padding: 10px; /* Add padding */
+    margin: 0 auto; /* Center align button */
+  }
+
 }

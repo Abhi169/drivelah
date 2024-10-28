@@ -52,8 +52,8 @@ const DevicePage = () => {
 
   return (
     <div className="device-container">
-      <h1>Device Management</h1>
-      <p>
+      <h1 className="device-title">Device Management</h1>
+      <p className="device-p">
         Add details of the device, if any already installed on your car. If
         none, then continue to the next step.
       </p>
@@ -76,17 +76,17 @@ const DevicePage = () => {
           return (
             <div key={device.id} className={`device-info`}>
               <div className="left">
-                <h2>{deviceName}</h2>
-                <p>Device type</p>
+                <h2 className="device-name">{deviceName}</h2>
+                <p className="device-info-p">Device type</p>
                 <input
                   type="text"
-                  className="device-type-input"
+                  className="device-input"
                   readOnly
                   value={deviceInput}
                 />
                 {device.showSerial && (
                   <>
-                    <p>Serial number</p>
+                    <p className="device-info-p">Serial number</p>
                     <input
                       type="text"
                       name={`serial-${device.id}`}
@@ -98,7 +98,7 @@ const DevicePage = () => {
               <div className="right">
                 {device.id != 4 && (
                   <>
-                    <p>Bringing your own device?</p>
+                    <p className="device-p">Bringing your own device?</p>
                     <button
                       className={`toggle-switch ${
                         device.isBringing ? "active" : ""
@@ -110,7 +110,7 @@ const DevicePage = () => {
                     >
                       <span className="slider"></span>
                     </button>
-                    <p>
+                    <p className="device-note">
                       Toggle this on if you are bringing your own device. Leave
                       it off if Drive mate is providing the device.
                     </p>
@@ -118,7 +118,7 @@ const DevicePage = () => {
                 )}
                 {device.isBringing && (
                   <>
-                    <p>Upload an image of the device</p>
+                    <p className="device-info-p">Upload an image of the device</p>
                     <div className="upload-section">
                       <label className="upload-box">
                         Click to upload

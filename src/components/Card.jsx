@@ -1,11 +1,12 @@
 import locationIcon from '../assets/location.svg';
 import gaugeIcon from '../assets/gauge.svg'
 import lockIcon from '../assets/lock.svg'
+import './Card.css';
 
 const Card = ({ title, description, price, isSelected, onClick }) => {
   return (
     <div className={`card ${isSelected ? "selected" : ""}`} onClick={onClick}>
-      <h2 style={{fontWeight:'lighter', color:'#11687f'}}>{title}</h2>
+      <h2 className="card-title">{title}</h2>
       <ul>
         {description.map((item, index) => {
           let icon;
@@ -24,20 +25,19 @@ const Card = ({ title, description, price, isSelected, onClick }) => {
           }
           return (
             <li key={index}>
-              {icon && <img src={icon} style={{ width: 16, height:16, color:'#1ca6b0', margin: 3 }} />}
-              <span>{item}</span>
+              {icon && <img src={icon} />}
+              <span className="card-content">{item}</span>
             </li>
           );
         })}
       </ul>
-      <p style={{ color: "#11687d", fontWeight: "bolder" }}>
+      <p>
+        <span className="subscription-price">{price}</span>
         {price !== "Free" ? (
           <>
-            {price} <span style={{ fontWeight: "normal" }}>/month</span>
+            <span className="subscription-duration"style={{ fontWeight: "normal" }}>/month</span>
           </>
-        ) : (
-          price
-        )}
+        ) : ('')}
       </p>
     </div>
   );

@@ -5,6 +5,7 @@
   margin: 20px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 680px;
 }
 
 .devices {
@@ -43,12 +44,6 @@
   max-width: 40%;
   margin-top: 2rem;
   padding-right: 2rem;
-}
-
-.device-info h2 {
-  color: #026786;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
 }
 
 .device-info p {
@@ -134,4 +129,117 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.device-title {
+  font: 700 32px/56px "Museo Sans Rounded", sans-serif;
+  color: #026786;
+}
+
+.device-p {
+  font: 500 20px/24px "Museo Sans Rounded", sans-serif;
+  color: #4A4A4A;
+  margin-bottom: 15px;
+}
+
+.device-note {
+  font: 500 16px/24px "Museo Sans Rounded", sans-serif;
+  color: #4A4A4A;
+}
+
+.device-input {
+  font: 500 20px "Museo Sans Rounded", sans-serif;
+  color: #4A4A4A;
+}
+
+.device-name {
+  font: 500 22px/54px "Museo Sans Rounded", sans-serif;
+  color: #4A4A4A;
+}
+
+.device-info-p {
+  font: 300 16px "Museo Sans Rounded", sans-serif;
+  color: #4A4A4A;
+}
+
+/* Mobile Styles */
+
+@media (max-width: 768px) {
+  
+  .device-container {
+    padding: 15px; 
+    margin: 10px; 
+    border-radius: 4px; 
+    max-width: 100%; 
+  }
+
+
+  .device-p,
+  .device-note,
+  .device-info-p {
+    margin: 5px 0; 
+    text-align: left; 
+  }
+
+
+  .toggle-switch {
+    margin-left: auto; 
+    display: flex;
+    background-color: #e0e0e0;
+    border-radius: 15px; 
+    position: relative; 
+    cursor: pointer; 
+  }
+ 
+
+
+
+  .devices {
+    gap: 0.5rem;
+  }
+
+  .device-info {
+    flex-direction: column; 
+    padding: 15px; 
+  }
+
+  .device-info .left {
+    margin-right: 10px; 
+    max-width: 100%; 
+  }
+
+  .device-info .right {
+    max-width: 100%; 
+    margin-top: 10px; 
+    padding-right: 0; 
+  }
+
+  .device-info input[type="text"],
+  .device-info input[type="file"] {
+    padding: 12px; 
+  }
+
+  .upload-box {
+    height: 100px; 
+    font-size: 14px; 
+  }
+
+  .download-btn {
+    width: 100%; 
+  }
+
+  .device-title {
+    font-size: 28px; 
+  }
+
+  .device-p,
+  .device-input,
+  .device-name {
+    font-size: 18px;
+  }
+
+  .device-note,
+  .device-info-p {
+    font-size: 14px; 
+  }
 }

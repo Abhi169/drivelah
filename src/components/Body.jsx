@@ -3,6 +3,7 @@ import SubscriptionPage from "../pages/SubscriptionPage";
 import DevicePage from "../pages/DevicePage";
 import Footer from "./Footer";
 import checkIcon from "../assets/check.svg";
+import './Body.css';
 
 const Body = () => {
   const sections = [
@@ -63,13 +64,13 @@ const Body = () => {
                   ? "current"
                   : "upcoming"
               }`}
-              onClick={ index >= 8 &&
-                index < sections.length - 2
+              onClick={
+                index >= 8 && index < sections.length - 2
                   ? () => setCurrentSectionIndex(index)
                   : null
               }
             >
-              {section}
+              <span className="container-index">{section}</span>
               {index < currentSectionIndex && (
                 <span>
                   <img src={checkIcon} />

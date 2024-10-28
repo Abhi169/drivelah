@@ -1,4 +1,6 @@
 .subscription-container {
+  padding: 10px; /* Reduced padding */
+  margin: 10px; /* Reduced margin */
   border: 2px solid white;
   border-radius: 8px;
   padding: 20px;
@@ -10,14 +12,14 @@
 .styled-hr {
   border: none;
   height: 2px;
-  background-color: #11687f;
+  background-color: #b2b2b2;
   margin: 20px 0;
   width: 100%;
 }
 
 .note {
-  color: #B2B2B2;
-  font-size: 14px;
+  color: #b2b2b2;
+  font: 500 15px "Museo Sans Rounded", sans-serif;
 }
 
 .plans {
@@ -27,11 +29,23 @@
 }
 
 .card {
+  /* border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s; */
+
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex; /* Allows better control of content layout */
+  flex-direction: column; /* Stacks content vertically */
+  justify-content: space-between; /* Distribute content evenly */
+  overflow: hidden; /* Prevents content from spilling out */
+  box-sizing: border-box; /* Includes padding and border in the card's size */
+  max-width: 100%;
 }
 
 .card:hover {
@@ -59,8 +73,12 @@
   border-radius: 4px;
 }
 
-.subscription-add-ons input[type="radio"] {
-  margin-right: 10px;
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 500 20px/30px "Museo Sans Rounded", sans-serif;
+  color: #026786;
 }
 
 .last-content {
@@ -69,12 +87,15 @@
 
 .last-content p {
   margin: 10px 0;
+  color: #4a4a4a;
+  font: 500 20px "Museo Sans Rounded", sans-serif;
 }
 
 .last-content span {
   cursor: pointer;
-  color: #00A3AD;
+  color: #00a3ad;
   text-decoration: underline;
+  font: 700 20px "Museo Sans Rounded", sans-serif;
 }
 
 .last-content span:hover {
@@ -82,35 +103,53 @@
 }
 
 .card-container {
-    position: relative;
-    width: 50%;
+  position: relative;
+  width: 50%;
 }
 
 .card-container img {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
 }
 
 .card-container input {
-    width: 50%;
-    padding: 40px 10px 10px 40px;
-    border-radius: 14px;
-    font-size: 16px;   
+  width: 50%;
+  padding: 40px 10px 10px 40px;
+  border-radius: 14px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.card-container input::placeholder {
+  /* color: #888; */
+  letter-spacing: 3px; /* Adjust spacing to create gaps */
+  font-size: 16px;
 }
 
 .option {
-    padding: 10px;
-    width: 50%;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    margin: 10px;
+  padding: 10px;
+  width: 50%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  margin: 10px;
+}
+
+.option p {
+  margin: 0;
+  position: relative;
+  top: -20px;
+  border: 1px solid #ddd;
+  width: fit-content;
+  background-color: #b2b2b2;
 }
 
 .add-ons {
-    display: flex;
+  display: flex;
 }
 
 /* Hide the default radio button */
@@ -124,7 +163,7 @@ input[type="radio"] {
   width: 20px; /* Size of the custom radio button */
   height: 20px; /* Size of the custom radio button */
   border-radius: 50%; /* Make it circular */
-  border: 2px solid #ccc; /* Border color */
+  border: 2px solid #00a3ad; /* Border color */
   background-color: white; /* Background color */
   cursor: pointer; /* Pointer on hover */
   margin-right: 8px; /* Space between the button and label text */
@@ -132,6 +171,35 @@ input[type="radio"] {
 
 /* Change background color when radio is checked */
 input[type="radio"]:checked + .custom-radio {
-  background-color: #4CAF50; /* Color when checked */
-  border-color: #4CAF50; /* Change border color if needed */
+  background-color: #00a3ad;
+}
+
+.subscription-title {
+  font: 700 32px/56px "Museo Sans Rounded", sans-serif;
+  color: #026786;
+}
+
+.subscription-description {
+  font: 500 20px/30px "Museo Sans Rounded", sans-serif;
+  color: #4a4a4a;
+}
+
+.subscription-p {
+  font: 500 22px/24px "Museo Sans Rounded", sans-serif;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .option {
+    width: 100%;
+  }
+
+  .add-ons {
+    flex-direction: column;
+  }
+
+  .card-container {
+    width: 100%;
+  }
 }

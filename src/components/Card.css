@@ -1,0 +1,54 @@
+.card-title {
+    font: 500 22px/27px "Museo Sans Rounded", sans-serif;
+    color: #026786;
+}
+
+.card-content {
+    font: 500 15px/24px "Museo Sans Rounded", sans-serif;
+    color: #4A4A4A;
+    margin-left: 10px;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Hides the overflowing text */
+    text-overflow: ellipsis; /* Adds '...' to indicate overflow */
+    
+    
+}
+
+.subscription-price {
+    font: 900 22px/27px "Museo Sans Rounded", sans-serif;
+    color: #026786;
+}
+
+.subscription-duration {
+    font: 300 14px/17px "Museo Sans Rounded", sans-serif;
+    color: #026786;
+}
+
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .card {
+        padding: 15px; /* Adjust padding for mobile */
+        margin: 5px; /* Increase margin for better spacing */
+        border-radius: 8px; /* Slightly round corners for aesthetics */
+    }
+
+    .card-title {
+        font: 500 18px/22px "Museo Sans Rounded", sans-serif; /* Adjust font size */
+    }
+
+    .card-content {
+        font: 500 14px/20px "Museo Sans Rounded", sans-serif; /* Adjust font size */
+        white-space: normal; /* Allow wrapping on small screens */
+        overflow: visible; /* Show overflowing text */
+        text-overflow: clip; /* Remove ellipsis */
+    }
+
+    .subscription-price {
+        font: 900 20px/24px "Museo Sans Rounded", sans-serif; /* Adjust font size */
+    }
+
+    .subscription-duration {
+        font: 300 12px/15px "Museo Sans Rounded", sans-serif; /* Adjust font size */
+    }
+}
