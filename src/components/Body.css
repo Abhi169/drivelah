@@ -7,7 +7,7 @@
     }
   
     .container {
-      width: 83%; /* Full width for the container */
+      width: 90%; /* Full width for the container */
       padding: 10px; /* Add some padding */
     }
   
@@ -26,7 +26,7 @@
       border-radius: 5px;
       padding: 10px; /* Add padding inside list items */
       margin-bottom: 5px; /* Space between list items */
-      color: #000;
+      color: #4A4A4A;
     }
   
     /* Remove tick marks (if using checkIcon or similar) */
@@ -58,3 +58,7 @@
     }
   
   }
+
+.desktop-list {
+  margin-top: 50px;
+}

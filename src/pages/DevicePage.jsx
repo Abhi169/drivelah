@@ -4,9 +4,9 @@ import "./DevicePage.css";
 const DevicePage = () => {
   const [devices, setDevices] = useState([
     { id: 1, name: "Device 1", isBringing: false, showSerial: false },
-    { id: 2, name: "Device 2", isBringing: false, showSerial: false },
+    { id: 2, name: "Device 1", isBringing: false, showSerial: false },
     { id: 3, name: "Device 3", isBringing: false, showSerial: false },
-    { id: 4, name: "Device 4", isBringing: false, showSerial: false },
+    { id: 4, name: "Device 3", isBringing: false, showSerial: false },
   ]);
 
   const [uploadedImages, setUploadedImages] = useState({}); // To store images for each device
@@ -66,11 +66,11 @@ const DevicePage = () => {
             deviceName = device.isBringing ? "Device 2" : "Device 1";
             deviceInput = device.isBringing ? "Secondary GPS" : "Primary GPS";
           } else if (device.id === 3) {
-            deviceName = device.isBringing ? "Device 3" : "Device 2";
-            deviceInput = device.isBringing ? "Drive mate Go" : "Secondary GPS";
+            deviceName = device.isBringing ? "Device 2" : "Device 3";
+            deviceInput = device.isBringing ? "Secondary GPS" : "Drive mate Go";
           } else if (device.id === 4) {
-            deviceName = device.isBringing ? "Device 3" : "Device 4";
-            deviceInput = device.isBringing ? "Drive mate Go" : "Lockbox";
+            deviceName = device.isBringing ? "Device 4" : "Device 3";
+            deviceInput = device.isBringing ? "Lockbox" : "Drive mate Go";
           }
 
           return (

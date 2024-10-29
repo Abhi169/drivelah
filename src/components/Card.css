@@ -1,3 +1,7 @@
+.card {
+    min-width: 320px;
+}
+
 .card-title {
     font: 500 22px/27px "Museo Sans Rounded", sans-serif;
     color: #026786;
