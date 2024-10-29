@@ -171,7 +171,7 @@ input[type="radio"] {
   width: 20px; /* Size of the custom radio button */
   height: 20px; /* Size of the custom radio button */
   border-radius: 50%; /* Make it circular */
-  border: 2px solid #00a3ad; /* Border color */
+  border: 2px solid #026786; /* Border color */
   background-color: white; /* Background color */
   cursor: pointer; /* Pointer on hover */
   margin-right: 8px; /* Space between the button and label text */
@@ -179,7 +179,7 @@ input[type="radio"] {
 
 /* Change background color when radio is checked */
 input[type="radio"]:checked + .custom-radio {
-  background-color: #00a3ad;
+  background-color: #026786;
 }
 
 .subscription-title {

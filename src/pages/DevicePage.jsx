@@ -85,18 +85,19 @@ const DevicePage = () => {
                   value={deviceInput}
                 />
                 {device.showSerial && (
-                  <>
+                  <div className="desktop-serial">
                     <p className="device-info-p">Serial number</p>
                     <input
                       type="text"
                       name={`serial-${device.id}`}
                       placeholder="Enter the serial number of the device"
                     />
-                  </>
+                  </div>
                 )}
               </div>
               <div className="right">
-                  <>
+                <>
+                  <div className="toggle-row">
                     <p className="device-p">Bringing your own device?</p>
                     <button
                       className={`toggle-switch ${
@@ -109,14 +110,27 @@ const DevicePage = () => {
                     >
                       <span className="slider"></span>
                     </button>
-                    <p className="device-note">
-                      Toggle this on if you are bringing your own device. Leave
-                      it off if Drive mate is providing the device.
-                    </p>
-                  </>
+                  </div>
+                  <p className="device-note">
+                    Toggle this on if you are bringing your own device. Leave it
+                    off if Drive mate is providing the device.
+                  </p>
+                </>
+                {device.showSerial && (
+                  <div className="mobile-serial">
+                    <p className="device-info-p">Serial number</p>
+                    <input
+                      type="text"
+                      name={`serial-${device.id}`}
+                      placeholder="Enter the serial number of the device"
+                    />
+                  </div>
+                )}
                 {device.isBringing && (
                   <>
-                    <p className="device-info-p">Upload an image of the device</p>
+                    <p className="device-info-p">
+                      Upload an image of the device
+                    </p>
                     <div className="upload-section">
                       <label className="upload-box">
                         Click to upload

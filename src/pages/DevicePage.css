@@ -161,6 +161,15 @@
   color: #4A4A4A;
 }
 
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobile-serial {
+  display: none;
+}
+
 /* Mobile Styles */
 
 @media (max-width: 768px) {
@@ -191,7 +200,14 @@
   }
  
 
+  .mobile-serial {
+    display: block; 
+    margin-top: 10px; 
+  }
 
+  .desktop-serial {
+    display: none; 
+  }
 
   .devices {
     gap: 0.5rem;
