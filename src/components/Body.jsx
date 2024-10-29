@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SubscriptionPage from "../pages/SubscriptionPage";
 import DevicePage from "../pages/DevicePage";
-import Footer from "./Footer";
 import checkIcon from "../assets/check.svg";
 import './Body.css';
 
-const Body = () => {
+const Body = ({ currentSectionIndex, setCurrentSectionIndex }) => {
   const sections = [
     "Location",
     "About",
@@ -20,27 +19,19 @@ const Body = () => {
     "Easy Access",
   ];
 
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(() => {
-    const savedIndex = localStorage.getItem("currentSectionIndex");
-    return savedIndex != null ? parseInt(savedIndex, 10) : 8;
-  });
+  const [showDropdown, setShowDropdown] = useState(false);
 
-  const goToNextSection = () => {
-    if (currentSectionIndex < sections.length - 2) {
-      setCurrentSectionIndex(prevIndex => {
-        const newIndex = prevIndex + 1;
-        localStorage.setItem("currentSectionIndex", newIndex);
-        return newIndex;
-      });
-    }
+  const handleDropdownClick = () => {
+    setShowDropdown(!showDropdown);
   };
 
-  useEffect(() => {
-    localStorage.setItem("currentSectionIndex", currentSectionIndex);
-  }, [currentSectionIndex]);
+  const handleSectionClick = (index) => {
+    setCurrentSectionIndex(index);
+    setShowDropdown(false); // Close dropdown after selection
+  };
 
   const renderPage = () => {
-    switch(currentSectionIndex) {
+    switch (currentSectionIndex) {
       case 8:
         return <SubscriptionPage />;
       case 9:
@@ -48,12 +39,53 @@ const Body = () => {
       default:
         return <SubscriptionPage />;
     }
-  }
+  };
 
   return (
     <div className="body">
       <div className="container">
-        <ul>
+        <div className="dropdown-menu">
+          <button onClick={handleDropdownClick} className="dropdown-toggle">
+            {sections[currentSectionIndex]}
+            {/* SVG Icon for the dropdown arrow */}
+            <span className={`dropdown-arrow ${showDropdown ? "open" : ""}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-chevron-down"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </span>
+          </button>
+          {showDropdown && (
+            <ul className="dropdown-list">
+              {sections.map((section, index) => (
+                <li
+                  key={index}
+                  className={`section ${
+                    index < currentSectionIndex
+                      ? "completed"
+                      : index === currentSectionIndex
+                      ? "current"
+                      : "upcoming"
+                  }`}
+                  onClick={() => handleSectionClick(index)}
+                >
+                  {section}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <ul className="desktop-list">
           {sections.map((section, index) => (
             <li
               key={index}
@@ -73,7 +105,7 @@ const Body = () => {
               <span className="container-index">{section}</span>
               {index < currentSectionIndex && (
                 <span>
-                  <img src={checkIcon} />
+                  <img src={checkIcon} alt="Completed" />
                 </span>
               )}
             </li>
@@ -81,7 +113,6 @@ const Body = () => {
         </ul>
       </div>
       {renderPage()}
-      <Footer onNext={goToNextSection} />
     </div>
   );
 };

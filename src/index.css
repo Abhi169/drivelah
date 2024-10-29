@@ -16,6 +16,7 @@ body {
 }
 
 .body {
+  padding-bottom: 60px;
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -33,6 +34,59 @@ body {
 ul li {
   list-style-type: none;
   padding: 5px;
+}
+
+/* Dropdown for mobile */
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-toggle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4A4A4A;
+  background: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  position: relative; /* For absolute positioning of the dropdown arrow */
+}
+
+/* Dropdown arrow icon styling */
+.dropdown-arrow {
+  position: absolute;
+  right: 10px; /* Align icon to the right-most corner with padding */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.dropdown-arrow.open {
+  transform: translateY(-50%) rotate(180deg); /* Rotate arrow when dropdown is open */
+}
+
+.dropdown-list {
+  border: 1px solid #ccc;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-list li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-list li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Desktop list */
+.desktop-list {
+  display: flex;
+  flex-direction: column;
 }
 
 .plans {
@@ -56,7 +110,11 @@ ul li {
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
+  background-color: white;
+  z-index: 10;
 }
 
 .submission-footer {
@@ -65,7 +123,10 @@ ul li {
   background-color: white;
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .button {
@@ -77,7 +138,7 @@ ul li {
   text-align: center;
   margin: 5px;
   cursor: pointer;
-  margin-left: auto;
+  margin-left: 50px;
 }
 
 .button:hover {
@@ -110,64 +171,11 @@ ul li {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .body {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align items */
+  .dropdown-menu {
+    display: block;
   }
 
-  .container {
-    width: 83%; /* Full width for the container */
-    padding: 10px; /* Add some padding */
+  .desktop-list {
+    display: none;
   }
-
-  .container ul {
-    width: 100%; /* Full width for the list */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-  }
-
-  .container ul > li {
-    display: flex; /* Ensure the list items are displayed as flex items */
-    justify-content: space-between; /* Space out elements in the list item */
-    align-items: center; /* Center align items */
-    width: 100%; /* Full width for list items */
-    border: 1px solid #ccc; /* Add border to each list item */
-    border-radius: 5px;
-    padding: 10px; /* Add padding inside list items */
-    margin-bottom: 5px; /* Space between list items */
-    color: #000;
-  }
-
-  .container-index {
-    font-size: 18px; /* Adjust font size for mobile */
-  }
-
-  /* Remove tick marks (if using checkIcon or similar) */
-  .container ul > li img {
-    display: none; /* Hide the tick marks */
-  }
-
-
-  .plans {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center cards */
-    width: 100%; /* Full width */
-  }
-
-  .card {
-    max-width: 90%; /* Card takes up most of the screen width */
-    margin: 10px auto; /* Center cards with auto margins */
-  }
-
-  .footer {
-    position: relative; /* Change from fixed to relative for mobile */
-    padding: 10px; /* Add padding for footer */
-  }
-
-  .button {
-    width: 80%; /* Make the button width responsive */
-    padding: 10px; /* Add padding */
-    margin: 0 auto; /* Center align button */
-  }
-
 }

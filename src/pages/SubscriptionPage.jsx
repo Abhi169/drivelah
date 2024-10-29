@@ -9,7 +9,45 @@ const SubscriptionPage = () => {
   const [cardDetails, setCardDetails] = useState("");
 
   const handleCardDetailsChange = (e) => {
-    setCardDetails(e.target.value);
+    // Remove all non-digit characters from the input
+    let value = e.target.value.replace(/\D/g, "");
+
+    // Limit the total number of digits to 23 (16 for card, 4 for MMYY, 3 for CVC)
+    value = value.slice(0, 23);
+
+    // Extract parts of the input
+    const cardNumber = value.slice(0, 16);
+    const month = value.slice(16, 18);
+    const year = value.slice(18, 20);
+    const cvc = value.slice(20, 23);
+
+    // Format the card number into groups of 4 separated by spaces
+    let formattedValue = "";
+    if (cardNumber.length > 0) {
+      formattedValue += cardNumber.replace(/(\d{4})(?=\d)/g, "$1 ").trim();
+    }
+
+    // Add a space before the expiration date if card number is complete or partially entered
+    if (month.length > 0) {
+      formattedValue += " " + month;
+      // Add '/' between month and year if year is present
+      if (year.length > 0) {
+        formattedValue += "/" + year;
+      }
+    }
+
+    // Add a space before the CVC if both card number and expiration date are present
+    if (cvc.length > 0) {
+      formattedValue += " " + cvc;
+    }
+
+    // Ensure the formatted value does not exceed 29 characters
+    if (formattedValue.length > 29) {
+      formattedValue = formattedValue.slice(0, 29);
+    }
+
+    // Update the state with the formatted value
+    setCardDetails(formattedValue);
   };
 
   const renderDynamicContent = () => {
@@ -24,7 +62,9 @@ const SubscriptionPage = () => {
         return (
           <div className="subscription-add-ons">
             <hr className="styled-hr" />
-            <p className="subscription-p">Select add-ons for your subscription</p>
+            <p className="subscription-p">
+              Select add-ons for your subscription
+            </p>
             <div className="add-ons">
               <div className="option">
                 <label>
@@ -44,7 +84,7 @@ const SubscriptionPage = () => {
                 name="card"
                 value={cardDetails}
                 onChange={handleCardDetailsChange}
-                placeholder="1234 5678 1234 5678 MM/YY CVC"
+                placeholder="1234 5678 1234 5678&nbsp;&nbsp;&nbsp;&nbsp;MM/YY&nbsp;&nbsp;&nbsp;&nbsp;CVC"
               />
             </div>
             <p className="note">
@@ -88,7 +128,7 @@ const SubscriptionPage = () => {
                 name="card"
                 value={cardDetails}
                 onChange={handleCardDetailsChange}
-                placeholder="1234 5678 1234 5678 MM/YY CVC"
+                placeholder="1234 5678 1234 5678&nbsp;&nbsp;&nbsp;&nbsp;MM/YY&nbsp;&nbsp;&nbsp;&nbsp;CVC"
               />
             </div>
             <p className="note">
@@ -115,7 +155,7 @@ const SubscriptionPage = () => {
                 </label>
               </div>
               <div className="option">
-                <p>coming soon</p>
+                <span className="coming-soon-label">coming soon</span>
                 <label>
                   Between trip insurance
                   <input

@@ -9,9 +9,7 @@
     margin-left: 10px;
     white-space: nowrap; /* Prevents text from wrapping */
     overflow: hidden; /* Hides the overflowing text */
-    text-overflow: ellipsis; /* Adds '...' to indicate overflow */
-    
-    
+    text-overflow: ellipsis; /* Adds '...' to indicate overflow */ 
 }
 
 .subscription-price {
@@ -26,7 +24,7 @@
 
 
 /* Media query for mobile devices */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .card {
         padding: 15px; /* Adjust padding for mobile */
         margin: 5px; /* Increase margin for better spacing */

@@ -6,7 +6,7 @@ const DevicePage = () => {
     { id: 1, name: "Device 1", isBringing: false, showSerial: false },
     { id: 2, name: "Device 2", isBringing: false, showSerial: false },
     { id: 3, name: "Device 3", isBringing: false, showSerial: false },
-    { id: 4, name: "Device 4", isBringing: true, showSerial: true }, // Added Device 4
+    { id: 4, name: "Device 4", isBringing: false, showSerial: false },
   ]);
 
   const [uploadedImages, setUploadedImages] = useState({}); // To store images for each device
@@ -69,8 +69,8 @@ const DevicePage = () => {
             deviceName = device.isBringing ? "Device 3" : "Device 2";
             deviceInput = device.isBringing ? "Drive mate Go" : "Secondary GPS";
           } else if (device.id === 4) {
-            deviceName = "Device 4";
-            deviceInput = "Lockbox";
+            deviceName = device.isBringing ? "Device 3" : "Device 4";
+            deviceInput = device.isBringing ? "Drive mate Go" : "Lockbox";
           }
 
           return (
@@ -96,7 +96,6 @@ const DevicePage = () => {
                 )}
               </div>
               <div className="right">
-                {device.id != 4 && (
                   <>
                     <p className="device-p">Bringing your own device?</p>
                     <button
@@ -115,7 +114,6 @@ const DevicePage = () => {
                       it off if Drive mate is providing the device.
                     </p>
                   </>
-                )}
                 {device.isBringing && (
                   <>
                     <p className="device-info-p">Upload an image of the device</p>

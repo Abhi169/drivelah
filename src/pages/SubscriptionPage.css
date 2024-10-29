@@ -7,14 +7,15 @@
   margin: 20px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .styled-hr {
   border: none;
   height: 2px;
   background-color: #b2b2b2;
-  margin: 20px 0;
-  width: 100%;
+  margin: 20px 0 20px calc(-50vw + 50%);;
+  width: 100vw;
 }
 
 .note {
@@ -29,12 +30,6 @@
 }
 
 .card {
-  /* border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s; */
-
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -68,9 +63,8 @@
 .subscription-add-ons input[type="text"] {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 0px solid #ddd;
+  letter-spacing: 2px;
 }
 
 label {
@@ -103,34 +97,37 @@ label {
 }
 
 .card-container {
-  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 4px;
   width: 50%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 420px;
 }
 
 .card-container img {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
   width: 24px;
   height: 24px;
+  margin-right: 10px;
 }
 
 .card-container input {
-  width: 50%;
-  padding: 40px 10px 10px 40px;
-  border-radius: 14px;
   font-size: 16px;
-  text-align: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 .card-container input::placeholder {
-  /* color: #888; */
-  letter-spacing: 3px; /* Adjust spacing to create gaps */
+  color: #b2b2b2;
+  letter-spacing: 2px; /* Adjust spacing to create gaps */
   font-size: 16px;
 }
 
 .option {
+  position: relative;
   padding: 10px;
   width: 50%;
   border: 1px solid #ddd;
@@ -139,8 +136,19 @@ label {
   margin: 10px;
 }
 
+.coming-soon-label {
+  position: absolute;
+  top: -10px; /* Adjust position to sit above the option box */
+  left: 20px; /* Aligns with padding inside the option */
+  background-color: #b2b2b2;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  pointer-events: none; /* Prevents interaction with the label */
+}
+
 .option p {
-  margin: 0;
   position: relative;
   top: -20px;
   border: 1px solid #ddd;

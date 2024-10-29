@@ -1,0 +1,60 @@
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    .body {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center align items */
+    }
+  
+    .container {
+      width: 83%; /* Full width for the container */
+      padding: 10px; /* Add some padding */
+    }
+  
+    .container ul {
+      width: 100%; /* Full width for the list */
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+    }
+  
+    .container ul > li {
+      display: flex; /* Ensure the list items are displayed as flex items */
+      justify-content: space-between; /* Space out elements in the list item */
+      align-items: center; /* Center align items */
+      width: 100%; /* Full width for list items */
+      border: 1px solid #ccc; /* Add border to each list item */
+      border-radius: 5px;
+      padding: 10px; /* Add padding inside list items */
+      margin-bottom: 5px; /* Space between list items */
+      color: #000;
+    }
+  
+    /* Remove tick marks (if using checkIcon or similar) */
+    .container ul > li img {
+      display: none; /* Hide the tick marks */
+    }
+  
+  
+    .plans {
+      flex-direction: column; /* Stack cards vertically */
+      align-items: center; /* Center cards */
+      width: 100%; /* Full width */
+    }
+  
+    .card {
+      max-width: 90%; /* Card takes up most of the screen width */
+      margin: 10px auto; /* Center cards with auto margins */
+    }
+  
+    .footer {
+      position: relative; /* Change from fixed to relative for mobile */
+      padding: 10px; /* Add padding for footer */
+    }
+  
+    .button {
+      width: 80%; /* Make the button width responsive */
+      padding: 10px; /* Add padding */
+      margin: 0 auto; /* Center align button */
+    }
+  
+  }
